@@ -3,19 +3,19 @@ import React from 'react'
 
 const Header = props => (
   <header id="header" style={props.timeout ? { display: 'none' } : {}}>
-    <div className="logo">
+    {/* <div className="logo">
       <span className="icon fa-diamond"></span>
-    </div>
+    </div> */}
     <div className="content">
       <div className="inner">
-        <h1>Dimension</h1>
-        <p>
-          A fully responsive site template designed by{' '}
-          <a href="https://html5up.net">HTML5 UP</a> and released
-          <br />
-          for free under the{' '}
-          <a href="https://html5up.net/license">Creative Commons</a> license.
-        </p>
+      <h1 class="responsive-headline">Hello </h1>     
+      <h1 class="responsive-headline">I'm <a href="https://geekyants.com/rishabh-pandey\">Rishabh Pandey </a> </h1>
+        {/* <h1>Dimension</h1> */}
+        <h3>
+        I'm Bengaluru, India based FullStack JavaScript Developer.
+        Currently working as Tech Lead II at <a href="https://geekyants.com/">Geekyants</a>.
+        I have keen interest in mobile & Web development, IOT, Ethical Hacking and much more.
+        </h3>
       </div>
     </div>
     <nav>
@@ -23,10 +23,19 @@ const Header = props => (
         <li>
           <button
             onClick={() => {
-              props.onOpenArticle('intro')
+              props.onOpenArticle('about')
             }}
           >
-            Intro
+            About
+          </button>
+        </li>
+        <li>
+          <button
+            onClick={() => {
+              props.onOpenArticle('skills')
+            }}
+          >
+            Skills
           </button>
         </li>
         <li>
@@ -41,10 +50,10 @@ const Header = props => (
         <li>
           <button
             onClick={() => {
-              props.onOpenArticle('about')
+              props.onOpenArticle('resume')
             }}
           >
-            About
+            Resume
           </button>
         </li>
         <li>

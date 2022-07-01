@@ -1,8 +1,11 @@
 import PropTypes from 'prop-types'
 import React from 'react'
+import { withPrefix } from 'gatsby'
 import pic01 from '../images/pic01.jpg'
 import pic02 from '../images/pic02.jpg'
-import pic03 from '../images/pic03.jpg'
+import pic03 from '../images/rishabh-about.jpg'
+import resumePDF from "../assets/Rishabh-Resume.pdf"
+// import resumePDF from "/Rishabh-Resume.pdf"
 
 class Main extends React.Component {
   render() {
@@ -21,23 +24,41 @@ class Main extends React.Component {
         id="main"
         style={this.props.timeout ? { display: 'flex' } : { display: 'none' }}
       >
-        <article
-          id="intro"
-          className={`${this.props.article === 'intro' ? 'active' : ''} ${
+
+          {/*---------------ABOUT SECTION ----------*/}
+          <article
+          id="about"
+          className={`${this.props.article === 'about' ? 'active' : ''} ${
             this.props.articleTimeout ? 'timeout' : ''
           }`}
           style={{ display: 'none' }}
         >
-          <h2 className="major">Intro</h2>
+          <h2 className="major">About</h2>
           <span className="image main">
-            <img src={pic01} alt="" />
+            <img src={pic03} alt="" />
           </span>
           <p>
-            Aenean ornare velit lacus, ac varius enim ullamcorper eu. Proin
-            aliquam facilisis ante interdum congue. Integer mollis, nisl amet
-            convallis, porttitor magna ullamcorper, amet egestas mauris. Ut
-            magna finibus nisi nec lacinia. Nam maximus erat id euismod egestas.
-            By the way, check out my <a href="#work">awesome work</a>.
+          Hey ! I am Rishabh Pandey,a person who is passionate about technologies, coding, taking up challenges and much more. 
+          I have keen interest in Software and Mobile/Web develpoment along with interest in various technical activities.
+          </p>
+          <p><b>Qualities : </b>
+          Strong of mind, free, organizing skilled, self initiator, motivated, inventive, persuading charming and shrewd in business. 
+          I am talkative and cheerful, adapt very well to situations, excessive and enthusiastic.
+          </p>
+          {close}
+        </article>
+ {/*---------------SKILLS SECTION ----------*/}
+        <article
+          id="skills"
+          className={`${this.props.article === 'sk' ? 'active' : ''} ${
+            this.props.articleTimeout ? 'timeout' : ''
+          }`}
+          style={{ display: 'none' }}
+        >
+          <h2 className="major">Skills</h2>
+         
+          <p>
+          To succeed in this high-performance, global economy, everyone needs to understand and be good at communicating about skills that they hold and how much they are good at that particular skill set. So enlisted below are some of my Technical skills ,please have a Look .
           </p>
           <p>
             Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis
@@ -54,7 +75,7 @@ class Main extends React.Component {
           </p>
           {close}
         </article>
-
+    {/*---------------WORK SECTION ----------*/}
         <article
           id="work"
           className={`${this.props.article === 'work' ? 'active' : ''} ${
@@ -63,50 +84,55 @@ class Main extends React.Component {
           style={{ display: 'none' }}
         >
           <h2 className="major">Work</h2>
-          <span className="image main">
-            <img src={pic02} alt="" />
-          </span>
-          <p>
-            Adipiscing magna sed dolor elit. Praesent eleifend dignissim arcu,
-            at eleifend sapien imperdiet ac. Aliquam erat volutpat. Praesent
-            urna nisi, fringila lorem et vehicula lacinia quam. Integer
-            sollicitudin mauris nec lorem luctus ultrices.
-          </p>
-          <p>
-            Nullam et orci eu lorem consequat tincidunt vivamus et sagittis
-            libero. Mauris aliquet magna magna sed nunc rhoncus pharetra.
-            Pellentesque condimentum sem. In efficitur ligula tate urna.
-            Maecenas laoreet massa vel lacinia pellentesque lorem ipsum dolor.
-            Nullam et orci eu lorem consequat tincidunt. Vivamus et sagittis
-            libero. Mauris aliquet magna magna sed nunc rhoncus amet feugiat
-            tempus.
-          </p>
+          <div>
+          <ul>
+            <li><h4>APP TO TRACK THE MARKET PRICE OF METALS, BATTERIES</h4></li>
+          <p>A mobile app using React Native, redux-thunk that is used to fetch a daily market price for metals, stock available, buy and sell price.</p>
+         
+          <li><h4>A MULTI TENANT APPLICATION FOR ORGANISATION MANAGEMENT AND COMMUNICATIONS</h4></li>
+          <p>Portal to manage companies progress contribution and all based on team, end-user. It is built with MYSQL, Expressjs, & React</p>
+
+          <li><h4>EXPENSE TRACKING APP</h4></li>
+          <p>Banking API to financial analytics to build software that makes saving money easy. It is built on Expressjs, GraphQL, MySQL.</p>
+          <li><h4>TRAVEL PLANNING APP</h4></li>
+          <p>This app helps to plan the travel itinerary. It gives information about popular destinations and the things to do there. Also, it helps to plan the travel with your friends so that the trip plan can be shared and edited on groups. It also has a section for famous travel bloggers. Tech stack used is React Native, AWS AppSync, Redux, Apollo GraphQL    </p>
+          <li><h4>AN APP TO IMPROVE EFFECTIVENESS OF HEALTHCARE ORGANISATION</h4></li>
+          <p>Organisation Management API’s that keep track of patient-focused initiatives by individual team, the contribution of an individual with each organization having some objective to achieve using Express.js, MySQL.</p>
+          <li><h4></h4></li>
+          <p>    </p>
+          <li><h4></h4></li>
+          <p>    </p>
+          <li><h4></h4></li>
+          <p>    </p>
+          <li><h4></h4></li>
+          <p>    </p>
+          <li><h4></h4></li>
+          <p>    </p>
+          <li><h4>SERVER MONITORING APPLICATION</h4></li>
+          <p>Server Monitoring Sofware, it monitors over 150 servers and display their performance.</p>
+          </ul>
+          </div>
+
+            
           {close}
         </article>
 
+
+        {/*---------------RESUME SECTION ----------*/}
         <article
-          id="about"
-          className={`${this.props.article === 'about' ? 'active' : ''} ${
+          id="resume"
+          className={`${this.props.article === 'resume' ? 'active' : ''} ${
             this.props.articleTimeout ? 'timeout' : ''
           }`}
           style={{ display: 'none' }}
         >
-          <h2 className="major">About</h2>
-          <span className="image main">
-            <img src={pic03} alt="" />
-          </span>
-          <p>
-            Lorem ipsum dolor sit amet, consectetur et adipiscing elit. Praesent
-            eleifend dignissim arcu, at eleifend sapien imperdiet ac. Aliquam
-            erat volutpat. Praesent urna nisi, fringila lorem et vehicula
-            lacinia quam. Integer sollicitudin mauris nec lorem luctus ultrices.
-            Aliquam libero et malesuada fames ac ante ipsum primis in faucibus.
-            Cras viverra ligula sit amet ex mollis mattis lorem ipsum dolor sit
-            amet.
-          </p>
+          <h2 className="major">Resume</h2>
+          <div class="columns download"><p>
+            <a href={resumePDF} title="Rishabh's resume" target="_blank" class="button"><i class="fa fa-download"></i>Download Resume</a></p></div>
           {close}
         </article>
 
+          {/*---------------CONTACT SECTION ----------*/}
         <article
           id="contact"
           className={`${this.props.article === 'contact' ? 'active' : ''} ${
@@ -139,29 +165,25 @@ class Main extends React.Component {
           </form>
           <ul className="icons">
             <li>
+              <a href="tel:+919066274428" class="icon fa-phone"><span class="label">Mobile</span></a>
+            </li>
+            <li>
               <a
-                href="https://twitter.com/HuntaroSan"
+                href="https://twitter.com/geekrishabh"
                 className="icon fa-twitter"
               >
                 <span className="label">Twitter</span>
               </a>
             </li>
+            <li><a href="https://in.linkedin.com/in/pandeyrishabh25" class="icon fa-linkedin"><span class="label">LinkedIn</span></a></li>
             <li>
-              <a href="https://codebushi.com" className="icon fa-facebook">
-                <span className="label">Facebook</span>
+              <a href="https://github.com/geekrishabh" className="icon fa-github">
+                <span className="label">Github</span>
               </a>
             </li>
             <li>
-              <a href="https://codebushi.com" className="icon fa-instagram">
-                <span className="label">Instagram</span>
-              </a>
-            </li>
-            <li>
-              <a
-                href="https://github.com/codebushi/gatsby-starter-dimension"
-                className="icon fa-github"
-              >
-                <span className="label">GitHub</span>
+              <a href="mailto:geekrishabh@gmail.com" className="icon fa-envelope">
+                <span className="label">Email</span>
               </a>
             </li>
           </ul>
